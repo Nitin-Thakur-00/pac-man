@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Runner.gd" id="1_runner"]
+[ext_resource type="Texture2D" path="res://icon.svg" id="2_icon"]
+
+[node name="Runner" type="CharacterBody2D"]
+script = ExtResource("1_runner")
+speed = 280.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.5, 1, 1)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="PersonalLight" type="PointLight2D" parent="."]
+enabled = false
+
+[node name="AudioListener2D" type="AudioListener2D" parent="."]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]

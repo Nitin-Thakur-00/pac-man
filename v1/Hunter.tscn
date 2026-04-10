@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://Hunter.gd" id="1_hunter"]
+[ext_resource type="Texture2D" path="res://icon.svg" id="2_icon"]
+
+[node name="Hunter" type="CharacterBody2D"]
+script = ExtResource("1_hunter")
+speed = 350.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture = ExtResource("2_icon")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="VisionCone" type="PointLight2D" parent="."]
+shadow_enabled = true
+
+[node name="TerrorRadiusPlayer" type="AudioStreamPlayer2D" parent="."]
+
+[node name="BiteArea" type="Area2D" parent="."]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]

@@ -1,0 +1,138 @@
+:root {
+  --bg-color: #050505;
+  --wall-color: #2b57ff;
+  --wall-glow: #0044ff;
+  --pellet-color: #ffb8ae;
+  --power-pellet-glow: #ffb8ae;
+  --pacman-color: #ffff00;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: white;
+  font-family: var(--font-family);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+#game-container {
+  position: relative;
+  padding: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  border-radius: 20px;
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+canvas {
+  image-rendering: pixelated;
+  border-radius: 8px;
+  box-shadow: 0 0 20px rgba(0, 68, 255, 0.2);
+  filter: drop-shadow(0 0 5px var(--wall-color));
+  max-width: 100%;
+  height: auto;
+}
+
+.hud {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.hud-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hud-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.hud-value {
+  font-size: 1.2rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+#overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 20px;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+#overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(to bottom, #fff, #888);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+button {
+  background: #fff;
+  color: #000;
+  border: none;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+}
+
+.controls-hint {
+  margin-top: 20px;
+  color: #666;
+  font-size: 0.9rem;
+}

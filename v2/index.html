@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Procedural Pac-Man | Google Doodle Clone</title>
+    <meta name="description" content="A procedurally generated Pac-Man clone inspired by the Google Doodle. Unique mazes every time.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div id="game-container">
+        <div class="hud">
+            <div class="hud-item">
+                <span class="hud-label">Score</span>
+                <span id="score" class="hud-value">0000</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Level</span>
+                <span id="level" class="hud-value">1</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">Lives</span>
+                <span id="lives" class="hud-value">3</span>
+            </div>
+        </div>
+
+        <canvas id="game-canvas"></canvas>
+
+        <div id="overlay">
+            <h1 id="overlay-title">PAC-MAN</h1>
+            <button id="start-btn">INSERT COIN</button>
+            <p class="controls-hint">Use <b>WASD</b> or <b>Arrow Keys</b> to Move</p>
+        </div>
+    </div>
+
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
